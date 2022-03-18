@@ -1,0 +1,18 @@
+
+{{ form_start(form) }}
+    {{ form_row(form.titre) }}
+
+    <div class="container-etapes" data-prototype="{{ form_widget(form.etapes.vars.prototype)|e('html_attr') }}">
+      
+        {% for row in form.etapes %}
+           
+            <div class="card-photo">
+                {{ form_widget(row) }}
+            </div>
+        {% endfor %}
+    </div>
+
+    <button class="btn">{{ button_label|default('Save') }}</button>
+{{ form_end(form) }}
+
+
